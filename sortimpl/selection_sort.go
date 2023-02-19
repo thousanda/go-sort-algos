@@ -1,10 +1,13 @@
 package sortimpl
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/thousanda/go-sort-algos/sort"
+)
 
 type selectionSorter struct{}
 
-func NewSelectionSorter() *selectionSorter {
+func NewSelectionSorter() sort.Sorter {
 	return new(selectionSorter)
 }
 

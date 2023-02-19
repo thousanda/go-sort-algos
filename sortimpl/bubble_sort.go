@@ -1,10 +1,13 @@
 package sortimpl
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/thousanda/go-sort-algos/sort"
+)
 
 type bubbleSorter struct{}
 
-func NewBubbleSorter() *bubbleSorter {
+func NewBubbleSorter() sort.Sorter {
 	return new(bubbleSorter)
 }
 
