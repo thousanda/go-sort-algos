@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/thousanda/go-sort-algos/sortimpl"
+)
 
 func main() {
 	inSlc := []int64{4, 1, 6, 5, 2, 9, 7, 10, 8, 3}
@@ -10,6 +13,10 @@ func main() {
 	// outSlc := selectionSort(inSlc)
 	outSlc := mergeSort(inSlc)
 	fmt.Printf("output: %v\n", outSlc)
+
+	fmt.Println("---")
+	s := sortimpl.NewBubbleSorter()
+	fmt.Printf("%v\n", s.Sort(inSlc))
 }
 
 func bubbleSort(inSlc []int64) []int64 {
