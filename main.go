@@ -10,7 +10,7 @@ func main() {
 	inSlc := []int64{4, 1, 6, 5, 2, 9, 7, 10, 8, 3}
 	// inSlc := []int64{1, 2, 3, 4, 5, 6, 9, 7, 10, 8}
 	fmt.Printf("input: %v\n", inSlc)
-	s, err := newSorter("insertion")
+	s, err := newSorter("quick")
 	if err != nil {
 		fmt.Println(err)
 		return
@@ -29,6 +29,8 @@ func newSorter(mode string) (sort.Sorter, error) {
 		return sortimpl.NewMergeSorter(), nil
 	case "insertion":
 		return sortimpl.NewInsertionSorter(), nil
+	case "quick":
+		return sortimpl.NewQuickSorter(), nil
 	}
 	return nil, fmt.Errorf("not implemented mode: %v", mode)
 }
